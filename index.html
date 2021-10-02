@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Selectors</title>
+</head>
+<body>
+    <div>
+        <a href="https://www.dccomics.com/characters/batman" target="_blank">
+        <img  src="images/Batman-Logo.png" alt="The_Dark_Knight">
+        </a>
+        <h1>Селекторы. Специфичность.</h1>
+        <ul>
+            <li>
+                <h3>Селекторы по типу</h3>
+
+                CSS селекторы по типу выбирают элементы по имени узла. Используются отдельно, поэтому, селектор типа для конкретного имени тега выбирает все элементы этого типа, то есть с этим именем узла в документе.<br>
+                    <table>
+                        <tr>
+                            <th>HTML</th>
+                            <th>CSS</th>
+                        </tr>
+                        <tr>
+                            <th>
+                                &lt; a &frasl; &gt;<br>
+                                &lt; b &frasl; &gt;<br>
+                                &lt; c &frasl; &gt;
+                            </th>
+                            <th>a { }</th>
+                        </tr>
+                    </table>
+            </li>
+            <li>
+                <h3>Селекторы по <b id="identified">ID</b> </h3>
+                В HTML-документах CSS-селекторы по ID производят выборку всех элементов по ID, полностью совпадающих с селектором. <br>
+                <table>
+                    <tr>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            &lt; . . id = " a " &frasl;&gt;<br>
+                            &lt; . . id = " b " &frasl;&gt;<br>
+                            &lt; . . id = " c " &frasl;&gt;
+                        </th>
+                        <th>#a { }</th>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <h3>Селекторы потомков</h3>
+                <u>Комбинатор</u> ␣ (пробел) представляет собой 2 или более селекторов, найдёт элементы соответствующие обоим селекторам. Селекторы по потомкам похожи на селекторы дочерних элементов, но они не учитывают вложенность элементов и применяют свои свойства ко всем элементам данного типа, находящимся внутри родительского элемента, независимо от глубины вложенности. <br>
+                <table>
+                    <tr>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <ul>
+                                <li>&lt; a &gt;
+                                </li>
+                                   <ul>
+                                     <li>&lt; b &gt;
+                                     </li>
+                                        <ul>
+                                         <li>&lt; a &frasl; &gt; &lt; b &frasl; &gt;
+                                         </li>
+                                        </ul>
+                                     <li>&lt; b &frasl; &gt;
+                                     </li>
+                                     <li>&lt; c &gt;
+                                     </li>
+                                     <ul>
+                                        <li>&lt; a &frasl; &gt; &lt; b &frasl; &gt;
+                                        </li>
+                                       </ul>
+                                     <li>&lt; c &frasl; &gt;
+                                     </li>
+                                   </ul>
+                                <li>&lt; a &frasl; &gt;
+                                </li>
+                            </ul>
+                        </th>
+                        <th>a b { }</th>
+                    </tr>
+                </table>
+            </li>
+            <li id="combine-selectors">
+                <h3>Селекторы потока и идентификатора</h3>
+                <table>
+                    <tr>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <ul>
+                                <li>&lt;a id="a"&gt;
+                                </li>
+                                <ul>
+                                    <li>&lt; b &gt;
+                                    </li>
+                                        <ul>
+                                        <li>&lt; a &frasl; &gt; &lt; b &frasl; &gt;
+                                        </li>
+                                        </ul>
+                                    <li>&lt; b &frasl; &gt;
+                                    </li>
+                                    <li>&lt; c &gt;
+                                    </li>
+                                    <ul>
+                                        <li>&lt; a &frasl; &gt; &lt; b &frasl; &gt;
+                                        </li>
+                                    </ul>
+                                    <li>&lt; c &frasl; &gt;
+                                    </li>
+                                </ul>
+                                <li>&lt; a &frasl; &gt;
+                                </li>
+                            </ul>
+                        </th>
+                        <th>#a b { }</th>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <h3 class="class-selector">Селекторы по классу</h3>
+                В HTML документе, селекторы по CSS классу находят элементы с нужным классом. Атрибут класса определяется как разделённый пробелами список элементов, и один из этих пунктов должен точно соответствовать имени класса, приведённому в селекторе. <br>
+                <table>
+                    <tr>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            &lt; . . class = " a " &frasl;&gt;<br>
+                            &lt; . . class = " b " &frasl;&gt;<br>
+                            &lt; . . class = " c " &frasl;&gt;
+                        </th>
+                        <th>.a { }</th>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <h3>Универсальный селектор</h3>
+                Выбирает все элементы на странице. <br>
+                <table>
+                    <tr>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            &lt; a &frasl; &gt;<br>
+                            &lt; b &frasl; &gt;<br>
+                            &lt; c &frasl; &gt;
+                        </th>
+                        <th>* { }</th>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <h3>Смежные селекторы</h3>
+                <i>Указывает на смежный или следующий селектор.</i> Обеспечивает выбор только элемента расположенного непосредственно за определённым в первой части элементом. <br>
+                <table>
+                    <tr>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            &lt; a &frasl; &gt;<br>
+                            &lt; b &frasl; &gt;<br>
+                            &lt; b &frasl; &gt; <br>
+                            &lt; b &frasl; &gt;
+                        </th>
+                        <th>a + b { }</th>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <h3>Селектор следующего элемента</h3>
+                    <abbr>Общий комбинатор смежных селекторов</abbr> (~) разделяет два селектора и находит второй элемент только если ему предшествует первый, и они оба имеют общего родителя. Свойства будут применены ко всем элементам, указанным в правой части, следующим за элементом, указанным в левой части. <br>
+                    <table>
+                        <tr>
+                            <th>HTML</th>
+                            <th>CSS</th>
+                        </tr>
+                        <tr>
+                            <th>
+                                &lt; a &frasl; &gt;<br>
+                                &lt; b &frasl; &gt;<br>
+                                &lt; b &frasl; &gt; <br>
+                                &lt; c &frasl; &gt; <br>
+                                &lt; b &frasl; &gt;
+                            </th>
+                            <th>a ~ b { }</th>
+                        </tr>
+                    </table>
+            </li>
+            <li>
+                <h3>Селектор дочерних элементов</h3>
+                    <q>Комбинатор</q> > разделяет 2 селектора, находит элементы заданные вторым селектором, являющие прямыми потомками для элементов отобранных первым селектором. Напротив, два селектора в селекторе потомков  находят элементы не обязательно являющиеся прямыми потомками. <br>
+                    <table>
+                        <tr>
+                            <th>HTML</th>
+                            <th>CSS</th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <ul>
+                                    <li>&lt; a &gt;
+                                    </li>
+                                       <ul>
+                                         <li>&lt; b &gt;
+                                         </li>
+                                            <ul>
+                                             <li>&lt; a &frasl; &gt; &lt; b &frasl; &gt;
+                                             </li>
+                                            </ul>
+                                         <li>&lt; b &frasl; &gt;
+                                         </li>
+                                         <li>&lt; c &gt;
+                                         </li>
+                                         <ul>
+                                            <li>&lt; a &frasl; &gt; &lt; b &frasl; &gt;
+                                            </li>
+                                         </ul>
+                                         <li>&lt; c &frasl; &gt;
+                                         </li>
+                                       </ul>
+                                    <li>&lt; a &frasl; &gt;
+                                    </li>
+                                </ul>
+                            </th>
+                            <th>a > b { }</th>
+                        </tr>
+                    </table>
+            </li>
+            <li>
+                <h3>First of Type Selector</h3>
+                <section>
+                    <span>CSS псевдокласс</span>
+                    <span>:first-of-type</span>
+                    <span>находит первого потомка <em>своего типа</em></span>
+                    <del>среди детей</del>
+                    <span>родителя.</span>
+                </section>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

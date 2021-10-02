@@ -1,0 +1,68 @@
+/*Селекторы по типу*/
+body {
+    margin: 0 20%;
+    background-color: lightcyan;
+}
+
+h3 {
+    color: darkgreen;
+}
+
+img {
+    width: 185px;
+    height: 110px;
+}
+
+table {
+    display: inline;
+}
+
+li {
+    list-style-type: none;
+}
+
+/*Селекторы по ID*/
+#identified {
+    color: blue;
+}
+
+/*Селекторы потомков*/
+ul u {
+    color: brown;
+}
+
+/*Селекторы потока и идентификатора*/
+#combine-selectors h3 {
+    color: darkturquoise;
+}
+
+/*Селекторы по классу*/
+.class-selector {
+    color: deeppink;
+}
+
+/*Универсальный селектор*/
+* {
+    text-align: center;
+    color: darkslategray;
+}
+
+/*Смежные селекторы*/
+h3+i {
+    color: gold;
+}
+
+/*Селектор следующего элемента*/
+h3~abbr {
+    color: orangered;
+}
+
+/*Селектор дочерних элементов*/
+li>q {
+    color: indigo;
+}
+
+/*:first-of-type*/
+section :first-of-type {
+    background-color: lime;
+}
